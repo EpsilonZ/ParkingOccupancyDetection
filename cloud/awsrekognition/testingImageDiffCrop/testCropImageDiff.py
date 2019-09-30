@@ -1,0 +1,110 @@
+import cv2
+import time
+
+
+cam = cv2.VideoCapture(0)
+
+#We set custom bounding boxes to look for diff
+
+boundingBoxes = {}
+boundingBoxes['1'] = {}
+boundingBoxes['1']['Left'] = 16
+boundingBoxes['1']['Top'] = 13
+boundingBoxes['1']['Width'] = 80
+boundingBoxes['1']['Height'] = 69
+
+boundingBoxes['2'] = {}
+boundingBoxes['2']['Left'] = 542
+boundingBoxes['2']['Top'] = 14
+boundingBoxes['2']['Width'] = 614
+boundingBoxes['2']['Height'] = 67
+
+img_counter = 0
+
+def take_photo():
+	global cam
+	global img_counter
+	global img0
+	global img1
+
+	readNum = 5
+	for i in range(readNum):
+		ret, frame = cam.read()
+
+	img_name = "opencv_frame_{}.png".format(img_counter)
+	img_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+	cv2.imwrite(img_name, img_gray)
+
+	print("{} written!".format(img_name))
+	if(img_counter==0):
+		img0_gray = img_gray
+		img0 = frame
+	else:
+		img1 = frame
+		img1_gray = img_gray
+	img_counter = (img_counter + 1) % 2
+
+def lookForImageDiffFromBoundingBoxes():
+
+	isThereAnyDiffOnImage = False
+
+	for boundingBoxKey in boundingBoxes.keys():
+
+		print(boundingBoxKey)
+
+		crop0 = img0[boundingBoxes[boundingBoxKey]['Top']:boundingBoxes[boundingBoxKey]['Height'], boundingBoxes[boundingBoxKey]['Left']:boundingBoxes[boundingBoxKey]['Width']]
+		crop1 = img1[boundingBoxes[boundingBoxKey]['Top']:boundingBoxes[boundingBoxKey]['Height'], boundingBoxes[boundingBoxKey]['Left']:boundingBoxes[boundingBoxKey]['Width']]
+
+		
+		distL1 = cv2.norm(crop0, crop1, cv2.NORM_L1)
+		distL2 = cv2.norm(crop0, crop1, cv2.NORM_L2)
+		print("Diff con norm L1: " + str(distL1))
+		print("Diff con norm L2: " + str(distL2))
+
+
+		cv2.imshow('Crop0', crop0)
+		cv2.imshow('Crop1', crop1)
+		cv2.waitKey(0)
+		#METHOD 3: Check bookmarks for skit image diff
+		#TODO
+
+		#The comparison values will depend on tests made on the parking. It will vary depending on the distance we are from the parking and the zoom that is applied (also 
+		#daylight/light)
+
+		#if(size_bytes_diff > 1000):
+		if(distL2>4000):
+			isThereAnyDiffOnImage = True
+			break
+
+	return isThereAnyDiffOnImage
+
+
+if __name__ == "__main__":
+
+	take_photo()
+
+	take_photo()
+
+	while True:
+
+		take_photo()
+
+		existsDiff = lookForImageDiffFromBoundingBoxes()
+
+		if(existsDiff):
+			print("High difference between images detected, proceding to detect parking availability")
+		else:
+			print("Not diff detected")
+
+		time.sleep(1)
+
+
+
+
+
+
+
+
+
+
+

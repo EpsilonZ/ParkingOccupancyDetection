@@ -1,0 +1,15 @@
+Parking 0 Left 496 Top 204 Right 658 Bottom 423
+Parking 1 Left 260 Top 0 Right 411 Bottom 176
+Parking 2 Left 641 Top 203 Right 799 Bottom 419
+Parking 3 Left 365 Top 210 Right 528 Bottom 421
+Parking 4 Left 775 Top 3 Right 948 Bottom 184
+Parking 5 Left 385 Top 0 Right 546 Bottom 185
+Parking 6 Left 898 Top 205 Right 1023 Bottom 416
+Parking 7 Left 652 Top 0 Right 813 Bottom 185
+Parking 8 Left 536 Top 0 Right 684 Bottom 188
+Parking 9 Left 0 Top 2 Right 139 Bottom 197
+Parking 10 Left 757 Top 199 Right 946 Bottom 429
+Parking 11 Left 85 Top 214 Right 251 Bottom 419
+Parking 12 Left 917 Top 0 Right 1023 Bottom 169
+Parking 13 Left 233 Top 216 Right 379 Bottom 413
+Parking 14 Left 124 Top 5 Right 281 Bottom 193
