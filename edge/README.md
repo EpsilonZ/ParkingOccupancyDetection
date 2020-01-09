@@ -33,9 +33,9 @@ make
 ```
 __Note: ignore warnings that may appear, everything is good:)__
 
-### Test
+## Test
 
-## 1. Detecting parking spots (this will only be done once per a set of parking spots!)
+### 1. Detecting parking spots (this will only be done once per a set of parking spots!)
 
 Go to darknet-modified/darknet/ directory and execute the following command:
 
@@ -93,7 +93,7 @@ At the end, a file like this one will be generated labeling all the parking spot
 "{\"0\": {\"id\": 0, \"left\": 355, \"top\": 148, \"right\": 576, \"bottom\": 270}, \"1\": {\"id\": 1, \"left\": 2, \"top\": 144, \"right\": 164, \"bottom\": 294}, \"2\": {\"id\": 2, \"left\": 185, \"top\": 144, \"right\": 362, \"bottom\": 276}, \"3\": {\"id\": 3, \"left\": 140, \"top\": 158, \"right\": 191, \"bottom\": 235}, \"4\": {\"id\": 4, \"left\": 545, \"top\": 150, \"right\": 639, \"bottom\": 253}}"
 ```
 
-## 2. Detect parking occupancy (this will be running 24/7 based on parking spot bounding boxes detection!)
+### 2. Detect parking occupancy (this will be running 24/7 based on parking spot bounding boxes detection!)
 
 Run the following command:
 
