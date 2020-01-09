@@ -17,8 +17,11 @@ After understanding which solutions I'll provide now I'll go step by step explai
 Before diving into the implementations it's really important to have an overview of the solution before getting into details. Now, let's answer a fast custom FAQ by me:
 
 - A set of parking spots in a certain place usually change shape / distribution ? Answer is NO (and if that's the case it'll happen very rarely or to exceptional conditions)
+
 - How do we detect a parking spot is available or not? We can use ultrasonic sensors, LIDAR or many other technologies but in this case we'll use a simple webcam that costs ~15$ 
-- When looking for parking spot occupancy changes do we really need to recognize each second? Answer is NO. Because OpenCV capabilities we'll compute image differences at each second (L1, L2) and if nothing has changed why expend computation / energy? :D
+
+- When looking for parking spot occupancy changes do we really need to recognize each second? Answer is NO. Because OpenCV capabilities we'll compute image differences at each second (L1, L2) and if nothing has changed why expend computation / energy? :D Because of the easy computation of 2 images difference on OpenCV this operation will be fast. If you want to find an example on how this works head to cloud/awsrekognition/testingImageDiffCrop/ directory to see it in action! __Note that we'll be only looking at differences on the regions of image which parking spot corresponds to. For example, if a bird comes by on the sky we'll not detect that as a difference!__
+
 
 Now that we have a clearer vision on the problem and solution this software will follow a really simple structure:
 
@@ -57,5 +60,8 @@ More info about YOLO and it's usage https://pjreddie.com/darknet/yolo/
 Cloud has always been known as a component which has a variety of services and huge computational power. Because of this, many of the services we use nowadays are cloud-based but we, as developers, sometimes we suffer the cost of these services. That's why we'll be using a service that it's really cheap and probably you won't pay anything (thanks for the free tier AWS :D). That service will be AWS Rekognition.
 
 AWS Rekognition is a widly known service and it's used for labeling images and detecting which objects are within the image we provide to AWS. Note that because of the nature of this service, everyday gets better (the more images we feed to AWS, the better it gets!) so AWS it's a great choice (note that I'm using AWS but we could use any cloud provider!).
+
+
+
 
 
