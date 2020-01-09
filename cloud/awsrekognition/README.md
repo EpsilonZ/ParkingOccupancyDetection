@@ -29,4 +29,5 @@ And now, you'll be able to launch it and set it up following the cmd instruction
 __The procedure will be the same as edge detection so instead of doing 2 same explanations i'll explain the differences between each two so it's easier to you to set up both__
 
 python3 awsrekognitionspotdetector.py --> Will take the image by theirselve and ask you the parking spots. No need of providing detections.txt or the source image. It'll do everything for you.
+
 python3 awsrekognitionoccupancydetector.py --> Same as edge detection!
