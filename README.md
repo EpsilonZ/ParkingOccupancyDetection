@@ -1,11 +1,14 @@
 # ParkingOccupancyDetection
 
+ ![Allt text](readme_media/parkingstepstep.png)
+
 ### Parking spot & occupancy detector made simple!
 
 Parking occupancy detection has always been something important when we want to create smart parking solutions. Because this parking detection will be triggered at the edge in this repository you'll find two solutions:
 
 - Edge parking spot and occupancy detection. This solution will be completely computed at the edge with no need to communicating to the cloud! Note that this case it's usually common as SLAs nowadays can be very restrictive!
 - Cloud parking spot and occupancy detection. This solution will be completely done at cloud (we'll use AWS!) using the AWS Rekognition service! Because of it's great availability and computational power results will be greater than at the edge but because we have to go to cloud latency might be an issue!
+
 
 After understanding which solutions I'll provide now I'll go step by step explaining how each of this solutions will work:
 
@@ -24,8 +27,6 @@ Now that we have a clearer vision on the problem and solution this software will
 2. Detect parking occupancy. This step think it as a service. Once parking spots are detected this can run 24/7. It'll compare parking spot bounding boxes to car bounding boxes. If any car bounding box fits a parking spot bounding box is set as occupied (easy, right?). Look at this example
 
 Note that both implementations will follow the same schema but they will differ at the rekognition action.
-
-__IMAGE TO INSERT__ 
 
 ## Edge implementation
 
