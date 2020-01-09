@@ -32,7 +32,7 @@ Note that both implementations will follow the same schema but they will differ 
 
 ### This edge implementation has been tested in Raspberry Pi Model 3B+! 
 
-Nowadays edge devices are constrained (compared to cloud!) and because of this lack of power we'll need to adapt to it. YOLO software have done an amazing work doing exactly that, so, that's what we'll be using for detecting cars! Now, because by default YOLO does not save detections with bounding boxes (needed for comparing with car bounding boxes to detect occupancy!) we'll need to modify source code (edge/darknet-modified/darknet/src/image.c) and add a few lines (__this is already donde on the repo, is just only fyi__):
+Nowadays edge devices are constrained (compared to cloud!) and because of this lack of power we'll need to adapt to it. YOLO software have done an amazing work doing exactly that, so, that's what we'll be using for detecting cars! Now, because by default YOLO does not save detections with bounding boxes (needed for comparing with car bounding boxes to detect occupancy!) we'll need to modify source code (edge/darknet-modified/darknet/src/image.c) and add a few lines (__this is already done on the repo, is just only fyi__):
 
 At function __void draw_detections_v3(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, int ext_output)__ we'll add the following:
 ```
