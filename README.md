@@ -1,6 +1,6 @@
 # ParkingOccupancyDetection
 
-###Parking spot & occupancy detector made simple!
+### Parking spot & occupancy detector made simple!
 
 Parking occupancy detection has always been something important when we want to create smart parking solutions. Because this parking detection will be triggered at the edge in this repository you'll find two solutions:
 
