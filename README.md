@@ -52,7 +52,7 @@ And now we'll have the bounding boxes results printed at rekognition :)
 
  ![Allt text](readme_media/edgeboundingboxes.png)
 
-More info about YOLO and it's usage https://pjreddie.com/darknet/yolo/
+More info about YOLO and its usage https://pjreddie.com/darknet/yolo/
 
 
 ## Cloud implementation
