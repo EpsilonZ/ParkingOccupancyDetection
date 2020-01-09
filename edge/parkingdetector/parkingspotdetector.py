@@ -7,7 +7,7 @@ import sys
 
 
 if(len(sys.argv) != 3):
-	print("Usage: python3 parkingspotdetector.py detectionsFile.txt imageWhereDetectionsWhereMade.jpg")
+	print("Usage: python3 parkingspotdetector.py detectionsFile.txt imageWhereDetectionsWereMade.jpg")
 else:
 	print("-------------------------------------------------------------")
 
