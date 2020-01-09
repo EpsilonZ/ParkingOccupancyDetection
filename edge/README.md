@@ -1,6 +1,6 @@
 # EDGE
 
-## INSTALL
+## Install
 
 You'll need to install OpenCV library!
 
