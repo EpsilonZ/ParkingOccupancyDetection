@@ -1,7 +1,5 @@
 # ParkingOccupancyDetection
 
-__Project explanation will be found at https://medium.com/@epsilonz. Implementation explanation is found here__
-
  ![Allt text](readme_media/parkingstepstep.png)
 
 ### Parking spot & occupancy detector made simple!
